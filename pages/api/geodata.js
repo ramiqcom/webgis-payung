@@ -15,7 +15,7 @@ let collection = {};
 
 // Default function
 export default async function handler(req, res) {
-    const path = './public/geojson';
+    const path = './pages/api/geojson';
     fs.readdir(path, async (err, files) => {
 
         for (let i = 0; i < files.length; i++){

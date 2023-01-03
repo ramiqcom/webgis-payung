@@ -26,9 +26,14 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Main />
 
-      <Script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" crossOrigin onLoad={leaflet}/>
+      <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin/>
+
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+
+      <Script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" crossOrigin="" onLoad={leaflet}/>
+
+      <Main />
     </>
   )
 }
