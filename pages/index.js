@@ -1,8 +1,6 @@
 import Head from 'next/head';
-import Link from 'next/link';
+import { useState, useEffect } from 'react';
 import Script from 'next/script';
-import Image from 'next/image';
-import { useRef, useState, useEffect } from 'react';
 
 // ** Global variables ** //
 
@@ -11,11 +9,15 @@ let Map;
 // Map data
 let Road;
 let Sungai;
+let Kontur;
+let Kolam;
+let DEM;
 
 // ** Global variables ** //
 
 // App
 export default function Home() {
+
   return (
     <>
       <Head>
@@ -24,27 +26,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-
-      
-      <link 
-        rel="stylesheet" 
-        href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
-        crossOrigin=""
-      />
-
-      <Script 
-        src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
-        crossOrigin=""
-        onLoad={leaflet}
-      />
-
       <Main />
+
+      <Script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" crossOrigin onLoad={leaflet}/>
     </>
   )
 }
@@ -96,6 +80,7 @@ function Layer() {
         <dt><Facility /></dt>
         <dt><Network /></dt>
         <dt><Water /></dt>
+        <dt><Topography /></dt>
       </dl>
 
     </div>
@@ -253,7 +238,7 @@ function Network() {
     const condition = value.target.checked;
     setRoad(condition);
 
-    if (condition == true){
+    if (condition === true){
       Road.addTo(Map);
     } else {
       Road.remove();
@@ -269,13 +254,13 @@ function Network() {
       &nbsp;
       &nbsp;
       <a href="/shp/1_jalan.zip" download>
-        <button class="btn"><i class="fa fa-download"></i></button>
+        <button className="btn"><i className="fa fa-download"></i></button>
       </a>
     </div>
   )
 }
 
-// Facility list
+// Water list
 function Water() {
   // Hook function
   const [water, setWater] = useState(true);
@@ -290,10 +275,12 @@ function Water() {
     setWater(condition);
     setDisabled(!condition)
 
-    if (condition == true){
+    if (condition === true){
       Sungai.addTo(Map);
+      Kolam.addTo(Map);
     } else {
       Sungai.remove();
+      Kolam.remove();
     }
   }
 
@@ -302,7 +289,7 @@ function Water() {
     const condition = value.target.checked;
     setRiverCheck(condition);
 
-    if (condition == true){
+    if (condition === true){
       Sungai.addTo(Map);
     } else {
       Sungai.remove();
@@ -312,6 +299,12 @@ function Water() {
   function changePond(value){
     const condition = value.target.checked;
     setPondCheck(condition);
+
+    if (condition === true){
+      Kolam.addTo(Map);
+    } else {
+      Kolam.remove();
+    }
   }
 
   return (
@@ -326,25 +319,114 @@ function Water() {
         &nbsp;
         &nbsp;
         <a href="/shp/2_sungai.zip" download>
-          <button class="btn"><i class="fa fa-download"></i></button>
+          <button className="btn"><i className="fa fa-download"></i></button>
         </a>
-
       </dd>
 
       <dd>
         <Checkbox disabled={disabled} checked={pondCheck} id='kolam' label='Kolam' onChange={changePond} />
+        &nbsp;
+        &nbsp;
+        <div style={{ display: 'inline-block', backgroundColor: 'navy', width: '20%', opacity: 0.5 }}>
+        &nbsp;
+        </div> 
+        &nbsp;
+        &nbsp;
+        <a href="/shp/4_kolam.zip" download>
+          <button className="btn"><i className="fa fa-download"></i></button>
+        </a>
       </dd>
       
     </dl>
   )
 }
 
+// Topo list
+function Topography() {
+  // Hook function
+  const [topo, setTopo] = useState(true);
+  const [disabled, setDisabled] = useState(false);
+
+  const [contour, setContour] = useState(true);
+  const [dem, setDEM] = useState(false);
+
+  const layers = [Kontur, DEM];
+
+  // Main admin change disabled enable
+  function change(value){
+    const condition = value.target.checked;
+    setTopo(condition);
+    setDisabled(!condition)
+
+    if (condition === true){
+      Kontur.addTo(Map);
+    } else {
+      Kontur.remove();
+    }
+  }
+
+  // Function to change the value of check
+  function changeContour(value){
+    const condition = value.target.checked;
+    setContour(condition);
+
+    if (condition === true){
+      Kontur.addTo(Map);
+    } else {
+      Kontur.remove();
+    }
+  }
+
+  function changeDEM(value){
+    const condition = value.target.checked;
+    setDEM(condition);
+
+    if (condition === true){
+      DEM.addTo(Map);
+    } else {
+      DEM.remove();
+    }
+  }
+
+  return (
+    <dl>
+      <Checkbox checked={topo} id='topoAll' label='Topografi' className='mainList' onChange={change} />
+      
+      <dd>
+        <Checkbox disabled={disabled} checked={contour} id='contour' label='Kontur' onChange={changeContour} />
+        &nbsp;
+        &nbsp;
+        <hr width='20%' color="tan" size='5' style={{ display: 'inline-block' }} /> 
+        &nbsp;
+        &nbsp;
+        <a href="/shp/3_kontur.zip" download>
+          <button className="btn"><i className="fa fa-download"></i></button>
+        </a>
+      </dd>
+
+      <dd>
+        <Checkbox disabled={disabled} checked={dem} id='dem' label='DEM' onChange={changeDEM} />
+        &nbsp;
+        &nbsp;
+        <a href="/tiff/1_DEM.tif" download>
+          <button className="btn"><i className="fa fa-download"></i></button>
+        </a>
+      </dd>
+
+    </dl>
+  )
+}
+
 // Leaflet map load function
 async function leaflet() {
+  if(Map){
+    Map.remove()
+  }
+
   // Map option
   const options = {
-    center: [-6.825859868104941, 108.36123697530323],
-    zoom: 15
+    center: [-6.826622, 108.369413],
+    zoom: 16
   }
 
   // Set leaflet div map
@@ -359,10 +441,34 @@ async function leaflet() {
     }
   ).addTo(Map);
 
+  const bounding = [[-6.895052999999997, 108.407800000000037], [-6.799952999999938, 108.348395000000025]]
+
   // Fetch data
   let response = await fetch('/api/geodata');
   let result = await response.json();
+
+  DEM = L.imageOverlay('/png/1_DEM.png', bounding);
   
+  Kolam = L.geoJSON(result.kolam, {
+    style: (data) => {
+      return {
+        color: 'navy',
+        opacity: 1
+      }
+    }
+  });
+  Kolam.addTo(Map);
+
+  Kontur = L.geoJSON(result.kontur, {
+    style: (data) => {
+      return {
+        color: 'tan',
+        weight: '0.5',
+      }
+    }
+  });
+  Kontur.addTo(Map);
+
   Sungai = L.geoJSON(result.sungai, {
     style: (data) => {
       return {

@@ -16,9 +16,17 @@
     "eslint-config-next": "13.0.7",
     "fs": "^0.0.1-security",
     "gdal-async": "^3.6.1",
+    "georaster": "^1.5.6",
+    "georaster-layer-for-leaflet": "^3.10.0",
     "geotiff": "^2.0.7",
+    "leaflet": "^1.9.3",
+    "leaflet-geotiff": "^0.2.0",
+    "leaflet-geotiff-2": "^1.1.0",
     "next": "13.0.7",
+    "pixel-utils": "^0.9.0",
+    "plotty": "^0.4.9",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-leaflet": "^4.2.0"
   }
 }

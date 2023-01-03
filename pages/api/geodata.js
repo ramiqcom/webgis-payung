@@ -1,8 +1,14 @@
+export const config = {
+    api: {
+      responseLimit: false,
+    },
+  }
+
 // Import module
 import fs from 'fs';
 
 // Key
-const key = ['jalan', 'sungai']
+const key = ['jalan', 'sungai', 'kontur', 'kolam']
 
 // JSON
 let collection = {};
@@ -20,7 +26,9 @@ export default async function handler(req, res) {
             fs.readFile((path + '/' + file), async (err, data) => {
                 collection[id] = await JSON.parse(data);
                 if (i == files.length - 1){
+                    res.status(202);
                     res.send(collection);
+                    res.end();
                 }
             })
         }
