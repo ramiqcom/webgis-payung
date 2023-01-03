@@ -1,6 +1,9 @@
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import Script from 'next/script';
+import useSWR from 'swr';
+
+const fetcher = (url) => fetch(url).then((res) => res.json());
 
 // ** Global variables ** //
 
@@ -17,7 +20,6 @@ let DEM;
 
 // App
 export default function Home() {
-
   return (
     <>
       <Head>
@@ -27,9 +29,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin/>
+      <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin=""/>
 
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
 
       <Script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" crossOrigin="" onLoad={leaflet}/>
 
@@ -448,13 +450,9 @@ async function leaflet() {
 
   const bounding = [[-6.895052999999997, 108.407800000000037], [-6.799952999999938, 108.348395000000025]]
 
-  // Fetch data
-  let response = await fetch('/api/geodata');
-  let result = await response.json();
-
   DEM = L.imageOverlay('/png/1_DEM.png', bounding);
   
-  Kolam = L.geoJSON(result.kolam, {
+  Kolam = L.geoJSON(require('../public/geojson/4_kolam.json'), {
     style: (data) => {
       return {
         color: 'navy',
@@ -464,7 +462,7 @@ async function leaflet() {
   });
   Kolam.addTo(Map);
 
-  Kontur = L.geoJSON(result.kontur, {
+  Kontur = L.geoJSON(require('../public/geojson/3_kontur.json'), {
     style: (data) => {
       return {
         color: 'tan',
@@ -474,7 +472,7 @@ async function leaflet() {
   });
   Kontur.addTo(Map);
 
-  Sungai = L.geoJSON(result.sungai, {
+  Sungai = L.geoJSON(require('../public/geojson/2_sungai.json'), {
     style: (data) => {
       return {
         color: 'dodgerblue',
@@ -483,7 +481,7 @@ async function leaflet() {
   });
   Sungai.addTo(Map);
 
-  Road = L.geoJSON(result.jalan, {
+  Road = L.geoJSON(require('../public/geojson/1_jalan.json'), {
     style: (data) => {
       return {
         color: 'orange',
