@@ -4,12 +4,34 @@
 
 * {
   font-family: rubik;
+  font-size: 12px
 }
 
 .mainList {
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .subList {
-  font-size: 15px;
+  font-size: 12px;
+}
+
+.symbol {
+  display: inline-block;
+}
+
+.picture {
+  height: 20px;
+  width: 20px;
+  vertical-align: bottom;
+}
+
+.draw {
+  vertical-align: middle;
+}
+
+.lc {
+  width: 50px;
+  height: 20px;
+  vertical-align: middle;
+  margin: 0 5px 0 0;
 }

@@ -1,0 +1,28 @@
+{
+"type": "FeatureCollection",
+"name": "pariwisata",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "nama": "Situ Janawi" }, "geometry": { "type": "Point", "coordinates": [ 108.363242151191727, -6.826874896252247 ] } },
+{ "type": "Feature", "properties": { "nama": "Cikadondong River Tubing" }, "geometry": { "type": "Point", "coordinates": [ 108.358914197417491, -6.825710607911191 ] } },
+{ "type": "Feature", "properties": { "nama": "Cirug Cinini Nini" }, "geometry": { "type": "Point", "coordinates": [ 108.365845661954765, -6.832239608367676 ] } },
+{ "type": "Feature", "properties": { "nama": "Cirug Benda" }, "geometry": { "type": "Point", "coordinates": [ 108.366343902445905, -6.83353313161294 ] } },
+{ "type": "Feature", "properties": { "nama": "Sadarehe" }, "geometry": { "type": "Point", "coordinates": [ 108.381719930716727, -6.853016655204584 ] } },
+{ "type": "Feature", "properties": { "nama": "Cawene Geulis Ciremai" }, "geometry": { "type": "Point", "coordinates": [ 108.376216823653039, -6.860939592031767 ] } },
+{ "type": "Feature", "properties": { "nama": "Batu Nyongclo" }, "geometry": { "type": "Point", "coordinates": [ 108.381464684563539, -6.83344797815267 ] } },
+{ "type": "Feature", "properties": { "nama": "Muncanenggang" }, "geometry": { "type": "Point", "coordinates": [ 108.375506218362489, -6.827803486403355 ] } },
+{ "type": "Feature", "properties": { "nama": "Gunung Ciwaru" }, "geometry": { "type": "Point", "coordinates": [ 108.371456993387568, -6.818991944871492 ] } },
+{ "type": "Feature", "properties": { "nama": "Cidewata Campground" }, "geometry": { "type": "Point", "coordinates": [ 108.383880334157979, -6.847737327363194 ] } },
+{ "type": "Feature", "properties": { "nama": "Gunung Ciremai" }, "geometry": { "type": "Point", "coordinates": [ 108.396745761265507, -6.886571659419586 ] } },
+{ "type": "Feature", "properties": { "nama": "Pos Pendakian Gunung Ciremai Jalur Sadarehe" }, "geometry": { "type": "Point", "coordinates": [ 108.389999094943263, -6.855091674550055 ] } },
+{ "type": "Feature", "properties": { "nama": "Pos 1 Lawang Gede" }, "geometry": { "type": "Point", "coordinates": [ 108.394344405455897, -6.859324807639857 ] } },
+{ "type": "Feature", "properties": { "nama": "Pos 2 tegal Jamuju" }, "geometry": { "type": "Point", "coordinates": [ 108.397480870186854, -6.863282185391967 ] } },
+{ "type": "Feature", "properties": { "nama": "Post 3 Kayu Manis" }, "geometry": { "type": "Point", "coordinates": [ 108.396827440034613, -6.869834492608057 ] } },
+{ "type": "Feature", "properties": { "nama": "Pangukusan" }, "geometry": { "type": "Point", "coordinates": [ 108.39413204065643, -6.876094781013202 ] } },
+{ "type": "Feature", "properties": { "nama": "Pos 5 Buyut Ketug" }, "geometry": { "type": "Point", "coordinates": [ 108.398313993631049, -6.877343585155617 ] } },
+{ "type": "Feature", "properties": { "nama": "Pos 7 Tanjakan Cita-Cita" }, "geometry": { "type": "Point", "coordinates": [ 108.397464534433084, -6.882865855018165 ] } },
+{ "type": "Feature", "properties": { "nama": "Batu Badak" }, "geometry": { "type": "Point", "coordinates": [ 108.376764073165276, -6.816594966700453 ] } },
+{ "type": "Feature", "properties": { "nama": "Ciwaru Kampung Air" }, "geometry": { "type": "Point", "coordinates": [ 108.374867169871521, -6.81515095727268 ] } },
+{ "type": "Feature", "properties": { "nama": "Istana Batu Korsih" }, "geometry": { "type": "Point", "coordinates": [ 108.373994200535662, -6.812366316364808 ] } }
+]
+}

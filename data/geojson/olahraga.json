@@ -1,0 +1,11 @@
+{
+"type": "FeatureCollection",
+"name": "olahraga",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "nama": "GOR PB Palapa", "jenis": "Olahraga", "subjenis": "Stadion atau Lapangan" }, "geometry": { "type": "Point", "coordinates": [ 108.361338840744367, -6.826328670434706 ] } },
+{ "type": "Feature", "properties": { "nama": "Lapangan Voli", "jenis": "Olahraga", "subjenis": "Stadion atau Lapangan" }, "geometry": { "type": "Point", "coordinates": [ 108.361255001331259, -6.82583194740287 ] } },
+{ "type": "Feature", "properties": { "nama": "Lapangan Sepakbola Desa Payung", "jenis": "Olahraga", "subjenis": "Stadion atau Lapangan" }, "geometry": { "type": "Point", "coordinates": [ 108.363815479956656, -6.826005557337992 ] } },
+{ "type": "Feature", "properties": { "nama": "Lapangan Capaka", "jenis": "Olahraga", "subjenis": "Stadion atau Lapangan" }, "geometry": { "type": "Point", "coordinates": [ 108.370181352765499, -6.827296219345208 ] } }
+]
+}

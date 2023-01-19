@@ -22,6 +22,7 @@
     "leaflet": "^1.9.3",
     "leaflet-geotiff": "^0.2.0",
     "leaflet-geotiff-2": "^1.1.0",
+    "leaflet-tilelayer-mbtiles-ts": "^1.5.8",
     "next": "13.0.7",
     "pixel-utils": "^0.9.0",
     "plotty": "^0.4.9",
