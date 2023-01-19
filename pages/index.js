@@ -104,9 +104,9 @@ function Main() {
           <h2 style={{ fontSize: '18px' }}>
             Daftar data
             &nbsp;
-            <a href='/file/DESA_PAYUNG.zip' download>
-              <button class="btn" style={{ display: 'inline-block' }}>
-                <i class="fa fa-download"></i>
+            <a href='/shp/DESA_PAYUNG.zip' download>
+              <button className="btn" style={{ display: 'inline-block' }}>
+                <i className="fa fa-download"></i>
                 &nbsp;
                 Download data
               </button>
