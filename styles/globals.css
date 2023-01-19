@@ -7,11 +7,16 @@
   font-size: 12px
 }
 
+.section {
+  margin: 0;
+}
+
 .mainList {
   font-size: 15px;
 }
 
 .subList {
+  margin: 0 25px 0;
   font-size: 12px;
 }
 
