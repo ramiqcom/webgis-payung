@@ -106,7 +106,7 @@ function Main() {
             
             &nbsp;
 
-            <a href='/shp/DESA_PAYUNG.zip' download>
+            <a href='https://storage.googleapis.com/gee-ramiqcom-bucket/kkn/DESA_PAYUNG.zip' download>
               <button className="btn">
                 <i className="fa fa-download"></i>
                 &nbsp;
@@ -116,7 +116,7 @@ function Main() {
 
             &nbsp;
 
-            <a href='/map/Peta.zip' download>
+            <a href='https://storage.googleapis.com/gee-ramiqcom-bucket/kkn/Peta.zip' download>
               <button className="btn">
                 <i className="fa fa-download"></i>
                 &nbsp;
