@@ -101,14 +101,26 @@ function Main() {
 
           <Basemap />
 
-          <h2 style={{ fontSize: '18px' }}>
+          <h2 style={{ fontSize: '18px', display: 'flext' }}>
             Daftar data
+            
             &nbsp;
+
             <a href='/shp/DESA_PAYUNG.zip' download>
-              <button className="btn" style={{ display: 'inline-block' }}>
+              <button className="btn">
                 <i className="fa fa-download"></i>
                 &nbsp;
-                Download data
+                Data
+              </button>
+            </a>
+
+            &nbsp;
+
+            <a href='/map/Peta.zip' download>
+              <button className="btn">
+                <i className="fa fa-download"></i>
+                &nbsp;
+                Map
               </button>
             </a>
           </h2> 
